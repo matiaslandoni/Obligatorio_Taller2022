@@ -18,41 +18,42 @@ Tareas realizadas por cara PlayBook
 
 **MariaDB**
 
-  -Implementacion del repositorio de MariaDB version 10.8
+  * Implementacion del repositorio de MariaDB version 10.8
   
-  -Instalacion de paquetes necesarios
+  * Instalacion de paquetes necesarios
   
-  -Inicio automatico del servicio
+  * Inicio automatico del servicio
   
-  -Importacion de archivo de configuracion, base de datos y usuario
+  * Importacion de archivo de configuracion, base de datos y usuario
   
 
 **Tomcat**
 
 
-  -Instalacion de paquetes necesarios
+  * Instalacion de paquetes necesarios
   
-  -Creacion de directorios y usuario
+  * Creacion de directorios y usuario
   
-  -Descarga e instalacion de Tomcat 9
+  * Descarga e instalacion de Tomcat 9
   
-  -Inicio automatico del servicio
+  * Inicio automatico del servicio
   
-  -Importacion de archivos de configuracion
+  * Importacion de archivos de configuracion
 
 ## Requerimientos necesarios para poder desplegar la infraestructura.
 **Servidor bastion**
   
-   -Ansible 
+   * Ansible 
     
-   -Keys SSH de servidores destino
+   * Keys SSH de servidores destino
     
-   -Git
+   * Git
+   * 
 **Servidor destino**
     
-   -Usuario ansible con permisos sudo sin contraseña
+   * Usuario ansible con permisos sudo sin contraseña
     
-   -SSH
+   * SSH
 
 ## Guia para lograr un despliegue correcto.
 **A continuacion detallamos el paso a paso para poder desplegar la Web Online Boutique aplicando este repositorio**
@@ -60,8 +61,8 @@ Tareas realizadas por cara PlayBook
 **Entendemos en este punto que los requerimientos detallados anteriormente se cumplen**
 
 1-Clonar repositorio de GitHub
-  *Situarse en directorio desde el cual ejecutar los playbooks y ejecutar el siguiente comando: git clone https://github.com/matiaslandoni/Obligatorio_Taller2022.git
-  *Extraer los archivos contenidos dentro del ZIP
+  * Situarse en directorio desde el cual ejecutar los playbooks y ejecutar el siguiente comando: git clone https://github.com/matiaslandoni/Obligatorio_Taller2022.git
+  * Extraer los archivos contenidos dentro del ZIP
 
 2-Configuracion y ejecucion de PlayBook
 
