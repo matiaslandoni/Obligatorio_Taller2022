@@ -48,9 +48,9 @@ Tomcat
   *Extraer los archivos contenidos dentro del ZIP
 
 2-Configuracion y ejecucion de PlayBook
-  *Modificar el archivo hosts con las IPs de los servidores destino
-  *Situarse en el directorio en el que se encuentra el archivo .yaml que se desea desplegar (mariadb o tomcat).
-  *Ejecutar el siguiente comando en equipo bastion: "ansible-playbook -i hosts $.yaml" (sin comillas, reemplazar $ por playbook a ejecutar)
+  *Modificar el archivo hosts con las IPs de los servidores destino*
+  *Situarse en el directorio en el que se encuentra el archivo .yaml que se desea desplegar (mariadb o tomcat).*
+  *Ejecutar el siguiente comando en equipo bastion: "ansible-playbook -i hosts $.yaml" (sin comillas, reemplazar $ por playbook a ejecutar)*
 
 Una vez finalizado el proceso de instalacion, los servicios se encontraran desplegados y disponibles para su uso.
 
