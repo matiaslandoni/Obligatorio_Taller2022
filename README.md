@@ -16,7 +16,7 @@ Se cuenta con 2 playbooks diferentes, uno para la instalacion de MariaDB y otro 
 
 Tareas realizadas por cara PlayBook
 
-MariaDB
+**MariaDB**
 
   -Implementacion del repositorio de MariaDB version 10.8
   
@@ -26,7 +26,7 @@ MariaDB
   
   -Importacion de archivo de configuracion, base de datos y usuario
 
-Tomcat
+**Tomcat**
   -Instalacion de paquetes necesarios
   -Creacion de directorios y usuario
   -Descarga e instalacion de Tomcat 9
