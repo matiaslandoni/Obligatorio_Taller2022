@@ -61,7 +61,10 @@ Tareas realizadas por cara PlayBook
 **Entendemos en este punto que los requerimientos detallados anteriormente se cumplen**
 
 1-Clonar repositorio de GitHub
-  * Situarse en directorio desde el cual ejecutar los playbooks y ejecutar el siguiente comando: git clone https://github.com/matiaslandoni/Obligatorio_Taller2022.git
+  * Situarse en directorio desde el cual ejecutar los playbooks y ejecutar el siguiente comando: 
+  
+  git clone https://github.com/matiaslandoni/Obligatorio_Taller2022.git
+  
   * Extraer los archivos contenidos dentro del ZIP
 
 2-Configuracion y ejecucion de PlayBook
