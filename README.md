@@ -44,13 +44,13 @@ Tomcat
 **Entendemos en este punto que los requerimientos detallados anteriormente se cumplen**
 
 1-Clonar repositorio de GitHub
-  -Situarse en directorio desde el cual ejecutar los playbooks y ejecutar el siguiente comando: git clone https://github.com/matiaslandoni/Obligatorio_Taller2022.git
-  -Extraer los archivos contenidos dentro del ZIP
+  *Situarse en directorio desde el cual ejecutar los playbooks y ejecutar el siguiente comando: git clone https://github.com/matiaslandoni/Obligatorio_Taller2022.git
+  *Extraer los archivos contenidos dentro del ZIP
 
 2-Configuracion y ejecucion de PlayBook
-  -Modificar el archivo hosts con las IPs de los servidores destino
-  -Situarse en el directorio en el que se encuentra el archivo .yaml que se desea desplegar (mariadb o tomcat).
-  -Ejecutar el siguiente comando en equipo bastion: "ansible-playbook -i hosts $.yaml" (sin comillas, reemplazar $ por playbook a ejecutar)
+  *Modificar el archivo hosts con las IPs de los servidores destino
+  *Situarse en el directorio en el que se encuentra el archivo .yaml que se desea desplegar (mariadb o tomcat).
+  *Ejecutar el siguiente comando en equipo bastion: "ansible-playbook -i hosts $.yaml" (sin comillas, reemplazar $ por playbook a ejecutar)
 
 Una vez finalizado el proceso de instalacion, los servicios se encontraran desplegados y disponibles para su uso.
 
