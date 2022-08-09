@@ -25,8 +25,11 @@ Tareas realizadas por cara PlayBook
   -Inicio automatico del servicio
   
   -Importacion de archivo de configuracion, base de datos y usuario
+  
 
 **Tomcat**
+
+
   -Instalacion de paquetes necesarios
   
   -Creacion de directorios y usuario
