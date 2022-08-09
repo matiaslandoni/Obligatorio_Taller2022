@@ -48,7 +48,7 @@ Tareas realizadas por cara PlayBook
    * Keys SSH de servidores destino
     
    * Git
-   * 
+   
 **Servidor destino**
     
    * Usuario ansible con permisos sudo sin contraseña
@@ -72,5 +72,5 @@ Tareas realizadas por cara PlayBook
   
   * Ejecutar el siguiente comando en equipo bastion: "ansible-playbook -i hosts $.yaml" (sin comillas, reemplazar $ por playbook a ejecutar)
 
-Una vez finalizado el proceso de instalacion, los servicios se encontraran desplegados y disponibles para su uso.
+**Una vez finalizado el proceso de instalacion, los servicios se encontraran desplegados y disponibles para su uso.**
 
