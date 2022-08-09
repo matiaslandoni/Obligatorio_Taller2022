@@ -43,10 +43,6 @@ Tomcat
 
 **Entendemos en este punto que los requerimientos detallados anteriormente se cumplen**
 
-**En este repositorio tenemos en la carpeta OB el árbol de la solución completa con los distintos archivos que sustentan el despliegue automatizado de la aplicación**
-
-**En el siguiente enlace podemos pararnos en dicha carpeta y recorrer cada uno de los archivos [OB](/OB/)**
-
 1-Clonar repositorio de GitHub
   -Situarse en directorio desde el cual ejecutar los playbooks y ejecutar el siguiente comando: git clone https://github.com/matiaslandoni/Obligatorio_Taller2022.git
   -Extraer los archivos contenidos dentro del ZIP
