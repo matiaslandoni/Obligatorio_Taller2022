@@ -33,6 +33,7 @@ Tomcat
   -Servidor bastion
     -Ansible 
     -Keys SSH de servidores destino
+    -Git
   -Servidor destino:
     -Usuario ansible con permisos sudo sin contraseña
     -SSH
@@ -47,11 +48,13 @@ Tomcat
 **En el siguiente enlace podemos pararnos en dicha carpeta y recorrer cada uno de los archivos [OB](/OB/)**
 
 1-Clonar repositorio de GitHub
-  -Situarse en 
+  -Situarse en directorio desde el cual ejecutar los playbooks y ejecutar el siguiente comando: git clone https://github.com/matiaslandoni/Obligatorio_Taller2022.git
+  -Extraer los archivos contenidos dentro del ZIP
 
-## A modo de conclusión:
-### Comentar el plan de trabajo realizado. (Trabajo grupal – Aporte individual)
+2-Configuracion y ejecucion de PlayBook
+  -Modificar el archivo hosts con las IPs de los servidores destino
+  -Situarse en el directorio en el que se encuentra el archivo .yaml que se desea desplegar (mariadb o tomcat).
+  -Ejecutar el siguiente comando en equipo bastion: "ansible-playbook -i hosts $.yaml" (sin comillas, reemplazar $ por playbook a ejecutar)
 
-La forma de trabajo fue reuniéndonos en forma presencial o por Microsoft Team en video llamada, compartiendo pantalla, viendo los distintos temas y realizando los distintos pasos del obligatorio, queremos destacar que cada tarea se trató de hacer en conjunto y en línea.
+Una vez finalizado el proceso de instalacion, los servicios se encontraran desplegados y disponibles para su uso.
 
-Se trato generalmente de estar involucrados en todas las tareas del obligatorio y trabajar en conjunto.
