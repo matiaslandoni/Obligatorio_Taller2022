@@ -28,19 +28,28 @@ Tareas realizadas por cara PlayBook
 
 **Tomcat**
   -Instalacion de paquetes necesarios
+  
   -Creacion de directorios y usuario
+  
   -Descarga e instalacion de Tomcat 9
+  
   -Inicio automatico del servicio
+  
   -Importacion de archivos de configuracion
 
 ## Requerimientos necesarios para poder desplegar la infraestructura.
-  -Servidor bastion
-    -Ansible 
-    -Keys SSH de servidores destino
-    -Git
-  -Servidor destino:
-    -Usuario ansible con permisos sudo sin contraseña
-    -SSH
+**Servidor bastion**
+  
+   -Ansible 
+    
+   -Keys SSH de servidores destino
+    
+   -Git
+**Servidor destino**
+    
+   -Usuario ansible con permisos sudo sin contraseña
+    
+   -SSH
 
 ## Guia para lograr un despliegue correcto.
 **A continuacion detallamos el paso a paso para poder desplegar la Web Online Boutique aplicando este repositorio**
