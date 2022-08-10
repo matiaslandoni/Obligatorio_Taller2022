@@ -13,7 +13,7 @@ El objetivo del obligatorio es automatizar el despliegue en servidores Ubuntu y 
 
 Se cuenta con 2 playbooks diferentes, uno para la instalacion de MariaDB y otro para Tomcat, ambos pueden ser utilizados en los SO mencionados previamente.
 
-Tareas realizadas por cara PlayBook
+Tareas realizadas por cada PlayBook
 
 **MariaDB**
 
