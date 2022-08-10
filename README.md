@@ -8,7 +8,6 @@
 ## Objetivo del Obligatorio.
 El objetivo del obligatorio es automatizar el despliegue en servidores Ubuntu y RedHat(Rocky) de los servicios Tomcat 9 y MariaDB/MySQL mediante el uso de ansible.
 
-Este repositorio contiene lo necesario para que un usuario despliegue de forma automatizada dichos servicios.
 
 ## Descripción de la función de cada servicio.
 
@@ -61,7 +60,7 @@ Tareas realizadas por cara PlayBook
 **Entendemos en este punto que los requerimientos detallados anteriormente se cumplen**
 
 1-Clonar repositorio de GitHub
-  * Situarse en directorio desde el cual ejecutar los playbooks y ejecutar el siguiente comando: 
+  * Situarse en directorio desde el cual ejecutar los playbooks y utilizar el siguiente comando: 
   
     git clone https://github.com/matiaslandoni/Obligatorio_Taller2022.git
   
