@@ -55,7 +55,6 @@ Tareas realizadas por cada PlayBook
    * SSH
 
 ## Guia para lograr un despliegue correcto.
-**A continuacion detallamos el paso a paso para poder desplegar la Web Online Boutique aplicando este repositorio**
 
 **Entendemos en este punto que los requerimientos detallados anteriormente se cumplen**
 
