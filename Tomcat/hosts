@@ -1,0 +1,3 @@
+[webserver]
+192.168.56.106
+ansible@192.168.56.105 ansible_user=ansible

@@ -1,0 +1,90 @@
+  - name: Ensure the system can use the HTTPS transport for APT.
+    stat:
+      path: /usr/lib/apt/methods/https
+    register: apt_https_transport
+
+  - name: Install APT HTTPS transport.
+    apt:
+      name: "apt-transport-https"
+      state: present
+      update_cache: yes
+    when: not apt_https_transport.stat.exists
+
+  - name: Install basic packages
+    package:
+      name: ['vim','aptitude','bash-completion','tmux','tree','htop','wget','unzip','curl','git','tar']
+      state: present
+      update_cache: yes
+
+  - name: Install Default Java (Debian/Ubuntu)
+    apt:
+      name: default-jdk
+      state: present
+
+  - name: Add tomcat group
+    group:
+      name: tomcat
+
+  - name: Add "tomcat" user
+    user:
+      name: tomcat
+      group: tomcat
+      home: /usr/share/tomcat
+      createhome: no
+      system: yes
+
+  - name: Download Tomcat
+    get_url:
+      url: https://archive.apache.org/dist/tomcat/tomcat-9/v{{ tomcat_ver }}/bin/apache-tomcat-{{ tomcat_ver }}.tar.gz
+      dest: /tmp/apache-tomcat-{{ tomcat_ver }}.tar.gz
+
+  - name: Create a tomcat directory
+    file:
+      path: /opt/tomcat
+      state: directory
+      owner: tomcat
+      group: tomcat
+      mode: '0777'
+
+  - name: Extract tomcat archive
+    unarchive:
+      src: /tmp/apache-tomcat-{{ tomcat_ver }}.tar.gz
+      dest: /opt/tomcat
+      owner: tomcat
+      group: tomcat
+      remote_src: yes
+      extra_opts: "--strip-components=1"
+      creates: /opt/tomcat/bin
+
+  - name: Copy tomcat service file
+    template:
+      src: templates/tomcat.service.j2
+      dest: /etc/systemd/system/tomcat.service
+    when: ansible_service_mgr == "systemd"
+
+  - name: Start and enable tomcat
+    service:
+      daemon_reload: yes
+      name: tomcat
+      state: started
+      enabled: yes
+    when: ansible_service_mgr == "systemd"
+  
+  - name: Set UI access credentials
+    template:
+      src: tomcat-users.xml.j2
+      dest: /opt/tomcat/conf/tomcat-users.xml
+    
+
+  - name: Allow access to Manager and Host Manager apps from any IP
+    template:
+      src: context.xml.j2 
+      dest: "{{ item }}"
+    with_items:
+      - /opt/tomcat/webapps/host-manager/META-INF/context.xml
+      - /opt/tomcat/webapps/manager/META-INF/context.xml
+    
+  - name: Restart service tomcat
+    ansible.builtin.service:
+      name: tomcat
+      state: restarted
