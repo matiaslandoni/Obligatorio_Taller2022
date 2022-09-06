@@ -1,0 +1,10 @@
+- name: MariaDB deployment playbook
+  hosts: dbserver       
+  become: yes              
+  become_method: sudo       
+  remote_user: ansible     
+  tasks:
+    - include_tasks: redhat.yaml
+      when: ansible_facts['os_family'] == "RedHat"
+    - include_tasks: ubuntu.yaml
+      when: ansible_facts['os_family'] == "Debian"

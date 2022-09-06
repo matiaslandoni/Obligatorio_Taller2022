@@ -1,0 +1,53 @@
+  - name: Add MariaDB repo
+    copy:
+      src: templates/rhmariadb.repo
+      dest: /etc/yum.repos.d/mariadb.repo
+  
+  - name: Install packages
+    package:
+      name: ['python3-PyMySQL', 'MariaDB-server']
+      state: present
+
+  - name: Start and enable mariadb
+    service:
+      name: mariadb
+      state: started
+      enabled: yes
+
+  - name: Start and enable firewalld
+    service:
+      name: firewalld
+      state: started
+      enabled: yes
+    when: ansible_service_mgr == "systemd"
+  
+  - name: Add .my.cnf file
+    copy:
+      src: templates/my.cnf.j2
+      dest: /root/.my.cnf
+
+  - name: Create database
+    mysql_db:
+      login_unix_socket: /var/lib/mysql/mysql.sock
+      name: dbobli
+      state: present    
+
+  - name: Create database user
+    community.mysql.mysql_user:
+      login_unix_socket: /var/lib/mysql/mysql.sock
+      name: mysql
+      password: admin01
+      priv: '*.*:ALL'
+      state: present
+
+  - name: Copy database dump file
+    copy:
+      src: templates/dbobli.sql
+      dest: /tmp
+  
+  - name: Restore database
+    community.mysql.mysql_db:
+      login_unix_socket: /var/lib/mysql/mysql.sock
+      name: dbobli
+      state: import
+      target: /tmp/dbobli.sql  

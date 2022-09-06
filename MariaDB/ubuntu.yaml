@@ -1,0 +1,61 @@
+  - name: Install repo software package
+    package:
+      name: ['software-properties-common', 'dirmngr', 'apt-transport-https']
+      state: present
+  
+  - name: Add MariaDB Repository Key 
+    apt_key:
+      url: "https://mariadb.org/mariadb_release_signing_key.asc"
+      state: present
+  
+  - name: Add MariaDB Repository 
+    apt_repository:
+      repo: "deb [arch=amd64] https://atl.mirrors.knownhost.com/mariadb/repo/10.8/ubuntu focal main"
+      state: present
+      filename: mariadb
+
+  - name: Update repo cache
+    apt:
+      update_cache: yes
+  
+  - name: Install Mariadb server 
+    apt:
+      name: ['mariadb-server', 'mariadb-common', 'python3-pymysql']
+      state: present       
+
+  - name: Add .my.cnf file
+    copy:
+      src: templates/my.cnf.j2
+      dest: /root/.my.cnf
+
+  - name: Add debian start
+    copy:
+      src: templates/debian-start.j2
+      dest: /etc/mysql/debian-start
+      mode: '0777'
+  
+  - name: Create database
+    mysql_db:
+      login_unix_socket: /run/mysqld/mysqld.sock
+      name: dbobli
+      state: present    
+  
+  - name: Create database user
+    community.mysql.mysql_user:
+      login_unix_socket: /run/mysqld/mysqld.sock
+      name: mysql
+      password: admin01
+      priv: '*.*:ALL'
+      state: present
+
+  - name: Copy database dump file
+    copy:
+      src: templates/dbobli.sql
+      dest: /tmp
+  
+  - name: Restore database
+    community.mysql.mysql_db:
+      login_unix_socket: /run/mysqld/mysqld.sock
+      name: dbobli
+      state: import
+      target: /tmp/dbobli.sql  
